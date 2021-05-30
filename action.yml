@@ -1,0 +1,42 @@
+name: 'Commit Skip'
+
+description: 'Does the last commit message request jobs to be skipped?'
+
+inputs:
+  filter:
+    description: 'Pattern in the commit message that skips the workflow.'
+    required: true
+    default: '"\[skip name\]"'
+
+outputs:
+  should-skip:
+    description: 'Should jobs be skipped'
+    value: ${{ steps.should-skip.outputs.should-skip }}
+
+runs:
+  using: 'composite'
+  steps:
+    - id: should-skip
+      run: |
+        # Commit filter
+        readonly local commit_filter=${{ inputs.filter }}
+
+        # Get recent commit messages 
+        readonly local last_commit=$(git log --pretty=format:"%s" -n 1 --no-merges)
+
+        echo "Last commits: $last_commit"
+        echo "Looking for: $commit_filter"
+
+        # Look for commit filter in recent commits
+        readonly local filter_count=$(echo "$last_commit" | grep -c -w "$commit_filter")
+
+        if [[ "$filter_count" -eq 0 ]]; then
+          echo "Don't skip..."
+          # Pass result to job output varables
+          echo ::set-output name=should-skip::'false'
+        else
+          echo "Should skip..."
+          # Pass result to job output varables
+          echo ::set-output name=should-skip::'true'
+        fi
+      shell: bash
