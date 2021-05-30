@@ -1,2 +1,3 @@
-# should-skip
-Check if jobs should be skipped in GitHub Actions.
+# Commit skip
+
+Skip jobs in GitHub Actions using a commit message.
