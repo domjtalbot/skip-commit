@@ -1,6 +1,6 @@
 # Skip Commit
 
-Does the last commit message request contain a skip request?
+Does the last commit message contain a skip request?
 
 ## Usage
 
