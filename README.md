@@ -16,7 +16,7 @@ name: Example workflow
 on: pull_request
 
 jobs:
-  check-skip:
+  skip-commit:
     runs-on: ubuntu-20.04
     outputs:
       should-skip: ${{ steps.skip-commit.outputs.should-skip == 'true' }}
@@ -29,21 +29,20 @@ jobs:
           # request commit can be read.
           fetch-depth: 2
 
-      # Read the last commit message and check if
-      # it contains the filter.
+      # Does the last commit message contain a skip request?
       - id: skip-commit
-        name: Does the last commit message request contain a skip request?
+        name: Skip Commit
         uses: domjtalbot/skip-commit@v1.0.1
         with:
           # The string filter to find in the
           # last commit.
           filter: '"\[skip test-job\]"'
   
-  # An example test job that only runs when the last
-  # commit message doesn't contain '[skip example-job]'.
+  # A test job that only runs when the last commit
+  # message doesn't contain '[skip example-job]'.
   test:
-    if: ${{ needs.check-skip.outputs.should-skip != 'true' }}
-    needs: [check-skip]
+    if: ${{ needs.skip-commit.outputs.should-skip != 'true' }}
+    needs: [skip-commit]
     runs-on: ubuntu-20.04
     steps:
       - name: Tests
