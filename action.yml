@@ -1,22 +1,24 @@
 name: 'Commit Skip'
 
-description: 'Does the last commit message request jobs to be skipped?'
+description: 'Does the last commit message request contain a skip request?'
 
 inputs:
   filter:
-    description: 'Pattern in the commit message that skips the workflow.'
-    required: true
     default: '"\[skip name\]"'
+    description: 'Pattern in the commit message that requests a skip.'
+    required: true
 
 outputs:
   should-skip:
-    description: 'Should jobs be skipped'
+    description: 'Has a skip been requested?'
     value: ${{ steps.should-skip.outputs.should-skip }}
 
 runs:
   using: 'composite'
+
   steps:
     - id: should-skip
+      name: Does the last commit message request contain a skip request?
       run: |
         # Commit filter
         readonly local commit_filter=${{ inputs.filter }}
