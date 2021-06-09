@@ -32,7 +32,7 @@ jobs:
       # Does the last commit message contain a skip request?
       - id: skip-commit
         name: Skip Commit
-        uses: domjtalbot/skip-commit@v1.0.1
+        uses: domjtalbot/skip-commit@v1.0.0
         with:
           # The string filter to find in the
           # last commit.
