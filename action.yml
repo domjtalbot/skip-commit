@@ -2,6 +2,10 @@ name: "Skip Commit"
 
 description: "Does the last commit message request contain a skip request?"
 
+branding:
+  color: yellow
+  icon: help-circle
+
 inputs:
   filter:
     default: '"\[skip name\]"'
