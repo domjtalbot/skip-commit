@@ -1,0 +1,22 @@
+name: Auto Label
+
+# Trigger the workflow on any pull request update.
+on:
+  pull_request:
+
+  workflow_dispatch:
+
+jobs:
+  labeler:
+    name: Pull Request Labeler
+    runs-on: ubuntu-latest
+    steps:
+      - name: Label
+        uses: fuxingloh/multi-labeler@v1.5.1
+        with:
+          # Pull request labeler config location
+          config-path: .github/pull-request-labels.config.yml
+          # `GITHUB_TOKEN` is automatically created and provided
+          # by GitHub actions.
+          # No action is required to set this up.
+          github-token: ${{secrets.GITHUB_TOKEN}}

@@ -1,0 +1,45 @@
+version: v1
+
+labels:
+  # Take a look at https://github.com/fuxingloh/multi-labeler
+  # for more detailed documentation.
+
+  - label: '🐞 bug'
+    matcher:
+      title: '^fix:.*'
+      body: '/fix'
+      branch: '^fix/.*'
+      commits: '^fix:.*'
+    sync: true
+
+  - label: '🏗️ ci'
+    matcher:
+      files:
+        any: ['.github/workflows/**/*.yml']
+    sync: true
+
+  - label: '✨ feature'
+    matcher:
+      title: '^feat:.*'
+      body: '/feat'
+      branch: '^feat/.*'
+      commits: '^feat:.*'
+    sync: true
+
+  - label: ':octocat: github'
+    matcher:
+      files:
+        any:
+          [
+            '.github/dependabot.yml',
+            '.github/labels.yml',
+            '.github/pull-request-labels.config.yml',
+            '.github/workflows/**/*.yml',
+          ]
+    sync: true
+
+  - label: '🛸 github actions'
+    matcher:
+      files:
+        any: ['.github/workflows/**/*.yml']
+    sync: true

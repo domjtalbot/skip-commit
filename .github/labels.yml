@@ -1,0 +1,90 @@
+- name: 🚧 blocked
+  color: e76f51
+  description: This issue or pull request is blocked by a problem outside the scope of this project
+
+- name: 🤖 bot
+  color: 4cc9f0
+  description: This issue or pull request was created by a bot
+
+- name: 🐞 bug
+  color: f94144
+  description: Something isn't working
+
+- name: 🧹 chore
+  color: f4a261
+  description: Generic task
+  from_name: Chore
+
+- name: 🏗️ ci
+  color: e9c46a
+  description: Continuous Integration
+  from_name: CI
+
+- name: 🤖 dependabot
+  color: 4cc9f0
+  description: Dependabot
+  from_name: Dependabot
+
+- name: 🧩 dependencies
+  color: f72585
+  description: Updates to dependencies
+  from_name: Dependencies
+
+- name: ✏️ documentation
+  color: '0075ca'
+  description: Improvements or additions to documentation
+  from_name: Documentation
+
+- name: 👥 duplicate
+  color: 'cfd3d7'
+  description: This issue or pull request already exists
+  from_name: duplicate
+
+- name: 🌟 enhancement
+  color: 'a2eeef'
+  description: New feature or request
+  from_name: enhancement
+
+- name: ✨ feature
+  color: 0e8a16
+  description: New feature
+  from_name: Feature
+
+- name: ':octocat: github'
+  color: 7209b7
+  description: GitHub repo management
+
+- name: 🛸 github actions
+  color: e9c46a
+  description: Improvement or additions to GitHub Actions
+  from_name: 'CI: GitHub Actions'
+
+- name: ⚠️ invalid
+  color: 'e4e669'
+  description: This doesn't seem right
+  from_name: invalid
+
+- name: 💬 needs more info
+  color: 'd4c5f9'
+  description: Additional details are required to proceed
+
+- name: ❔ question
+  color: 'd876e3'
+  description: Clarification or help is requested
+  from_name: question
+
+- name: 🤖 renovate
+  color: 4cc9f0
+  description: Renovate
+
+- name: 💖 sponsor
+  color: f15bb5
+  description: This issue or pull request was opened by a sponsor
+
+- name: 💤 stale
+  color: e29578
+  description: This issue or pull request hasn't been updated in a while
+
+- name: ⛔ won't fix
+  color: '666666'
+  description: This will not be worked on

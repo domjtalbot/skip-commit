@@ -1,0 +1,22 @@
+name: Sponsors label
+
+on:
+  pull_request:
+    types:
+      - opened
+
+  issues:
+    types:
+      - opened
+
+jobs:
+  labeler:
+    name: Label issue/PR if opened by a sponsor
+    runs-on: ubuntu-latest
+
+    steps:
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: JasonEtco/is-sponsor-label-action@v1.1.3
+        with:
+          label: 💖 sponsor

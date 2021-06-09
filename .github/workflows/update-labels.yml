@@ -1,0 +1,31 @@
+name: Update Labels
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/labels.yml
+      - .github/workflows/update-labels.yml
+
+  schedule:
+    - cron: '0 0 * * *'
+
+  workflow_dispatch:
+
+jobs:
+  update-labels:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout Repository
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - if: success()
+        name: Update labels
+        uses: crazy-max/ghaction-github-labeler@v3.1.1
+        with:
+          dry-run: false
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          skip-delete: false
+          yaml-file: .github/labels.yml
