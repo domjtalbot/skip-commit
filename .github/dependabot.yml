@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: 'github-actions'
+    assignees:
+      - 'domjtalbot'
+    commit-message:
+      prefix: 'gh-actions'
+    directory: '/'
+    labels:
+      - '🤖 dependabot'
+      - '🧩 dependencies'
+      - '🛸 github actions'
+    schedule:
+      interval: 'daily'
