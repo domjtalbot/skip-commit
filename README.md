@@ -1,3 +1,3 @@
-# Commit skip
+# Skip Commit
 
-Skip jobs in GitHub Actions using a commit message.
+Does the last commit message request contain a skip request?
