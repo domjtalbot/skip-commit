@@ -4,42 +4,42 @@ labels:
   # Take a look at https://github.com/fuxingloh/multi-labeler
   # for more detailed documentation.
 
-  - label: '🐞 bug'
+  - label: "🐞 bug"
     matcher:
-      title: '^fix:.*'
-      body: '/fix'
-      branch: '^fix/.*'
-      commits: '^fix:.*'
+      title: "^fix:.*"
+      body: "/fix"
+      branch: "^fix/.*"
+      commits: "^fix:.*"
     sync: true
 
-  - label: '🏗️ ci'
+  - label: "🏗️ ci"
     matcher:
       files:
-        any: ['.github/workflows/**/*.yml']
+        any: [".github/workflows/**/*.yml"]
     sync: true
 
-  - label: '✨ feature'
+  - label: "✨ feature"
     matcher:
-      title: '^feat:.*'
-      body: '/feat'
-      branch: '^feat/.*'
-      commits: '^feat:.*'
+      title: "^feat:.*"
+      body: "/feat"
+      branch: "^feat/.*"
+      commits: "^feat:.*"
     sync: true
 
-  - label: ':octocat: github'
+  - label: ":octocat: github"
     matcher:
       files:
         any:
           [
-            '.github/dependabot.yml',
-            '.github/labels.yml',
-            '.github/pull-request-labels.config.yml',
-            '.github/workflows/**/*.yml',
+            ".github/dependabot.yml",
+            ".github/labels.yml",
+            ".github/pull-request-labels.config.yml",
+            ".github/workflows/**/*.yml",
           ]
     sync: true
 
-  - label: '🛸 github actions'
+  - label: "🛸 github actions"
     matcher:
       files:
-        any: ['.github/workflows/**/*.yml']
+        any: [".github/workflows/**/*.yml"]
     sync: true

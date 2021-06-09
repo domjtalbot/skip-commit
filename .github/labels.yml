@@ -31,17 +31,17 @@
   from_name: Dependencies
 
 - name: ✏️ documentation
-  color: '0075ca'
+  color: "0075ca"
   description: Improvements or additions to documentation
   from_name: Documentation
 
 - name: 👥 duplicate
-  color: 'cfd3d7'
+  color: "cfd3d7"
   description: This issue or pull request already exists
   from_name: duplicate
 
 - name: 🌟 enhancement
-  color: 'a2eeef'
+  color: "a2eeef"
   description: New feature or request
   from_name: enhancement
 
@@ -50,26 +50,26 @@
   description: New feature
   from_name: Feature
 
-- name: ':octocat: github'
+- name: ":octocat: github"
   color: 7209b7
   description: GitHub repo management
 
 - name: 🛸 github actions
   color: e9c46a
   description: Improvement or additions to GitHub Actions
-  from_name: 'CI: GitHub Actions'
+  from_name: "CI: GitHub Actions"
 
 - name: ⚠️ invalid
-  color: 'e4e669'
+  color: "e4e669"
   description: This doesn't seem right
   from_name: invalid
 
 - name: 💬 needs more info
-  color: 'd4c5f9'
+  color: "d4c5f9"
   description: Additional details are required to proceed
 
 - name: ❔ question
-  color: 'd876e3'
+  color: "d876e3"
   description: Clarification or help is requested
   from_name: question
 
@@ -86,5 +86,5 @@
   description: This issue or pull request hasn't been updated in a while
 
 - name: ⛔ won't fix
-  color: '666666'
+  color: "666666"
   description: This will not be worked on

@@ -1,20 +1,20 @@
-name: 'Skip Commit'
+name: "Skip Commit"
 
-description: 'Does the last commit message request contain a skip request?'
+description: "Does the last commit message request contain a skip request?"
 
 inputs:
   filter:
     default: '"\[skip name\]"'
-    description: 'Pattern in the commit message that requests a skip.'
+    description: "Pattern in the commit message that requests a skip."
     required: true
 
 outputs:
   should-skip:
-    description: 'Has a skip been requested?'
+    description: "Has a skip been requested?"
     value: ${{ steps.should-skip.outputs.should-skip }}
 
 runs:
-  using: 'composite'
+  using: "composite"
 
   steps:
     - id: should-skip
