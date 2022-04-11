@@ -17,6 +17,6 @@ jobs:
     steps:
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: JasonEtco/is-sponsor-label-action@v1.1.3
+        uses: JasonEtco/is-sponsor-label-action@v1.2.0
         with:
           label: 💖 sponsor
