@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Label
-        uses: fuxingloh/multi-labeler@v1.5.1
+        uses: fuxingloh/multi-labeler@v2.0.3
         with:
           # Pull request labeler config location
           config-path: .github/pull-request-labels.config.yml
